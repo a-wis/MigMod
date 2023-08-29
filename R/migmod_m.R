@@ -1,4 +1,6 @@
 #' Function to estimate migration model
+#'
+#' @export
 #' @param df A data frame with migration data for sending countries, receiving countries, data quality measures and covariates
 #' @param sending A vector of ISO2 codes with sending countries to be used in the model (recommended to keep SE and FI)
 #' @param receiving A vector of ISO2 codes with receiving countries to be used in the model (recommended to keep SE and FI)
@@ -6,7 +8,7 @@
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
 #' @return An object of class `stanfit` returned by `rstan::sampling`
 #'
-migmod_est <- function(df,
+migmod_m <- function(df,
                               sending = c("SE","FI","IT","PL"),
                               receiving = c("SE","FI","IT","PL"),
                               years = 2010:2019, ...){
