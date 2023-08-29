@@ -29,6 +29,9 @@ inits=list(beta=rep(0,standata$N_preds),sigma=c(0.1,0.1),
 out <- rstan::sampling(stanmodels$migmod, data = standata,
                        cores=2, chains=2,
                        init = list(inits,inits),
-                       iter = 1500, warmup = 500,...)
+                       iter = 1000, warmup = 500,
+                       control = list(adapt_delta=0.95,
+                                      max_treedepth=15),
+                       ...)
 return(out)
 }
