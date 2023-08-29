@@ -1,0 +1,5 @@
+^MigMod\.Rproj$
+^\.Rproj\.user$
+Read-and-delete-me
+^rawdata-delete-later$
+\R\aux_data_prep.R
