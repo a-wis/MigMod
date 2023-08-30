@@ -3,3 +3,7 @@
 Read-and-delete-me
 ^rawdata-delete-later$
 \R\aux_data_prep.R
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
