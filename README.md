@@ -9,6 +9,7 @@ This is an R package that estimates international migration flows by using data 
 
 ```r
 devtools::install_github("a-wis/MigMod",build=F)
+library(MigMod)
 ```
 
 ### How to use

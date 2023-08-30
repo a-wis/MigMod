@@ -8,7 +8,8 @@ data_2_standata(
   df,
   sending = c("SE", "FI", "IT", "PL"),
   receiving = c("SE", "FI", "IT", "PL"),
-  years = 2010:2019
+  years = 2010:2019,
+  ref.country = "SE"
 )
 }
 \arguments{

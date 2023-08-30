@@ -10,14 +10,16 @@
 #'
 data_2_standata = function(df, sending = c("SE","FI","IT","PL"),
                            receiving = c("SE","FI","IT","PL"),
-                           years = 2010:2019){
+                           years = 2010:2019,
+                           ref.country="SE"){
   df <- df %>%
     filter(Sending_iso2 %in% sending,
            Receiving_iso2 %in% receiving,
            Year %in% years) %>%
     mutate(corr_f=Corridor %>% as.factor() %>% as.numeric(),
            orig=Sending %>% as.factor() %>% as.numeric(),
-           dest=Receiving %>% as.factor() %>% as.numeric())
+           dest=Receiving %>% as.factor() %>% as.numeric(),
+           benchmark=ifelse(Receiving_iso2==ref.country,1,0))
 
   #data undercounting auxiliary objects
   XL_em=df %>%
@@ -27,8 +29,8 @@ data_2_standata = function(df, sending = c("SE","FI","IT","PL"),
 
   XL_im=df %>%
     filter(!is.na(Immi)) %>%
-    select(Immi,UI,SE_benchmark) %>%
-    model.matrix(Immi~UI-1,data=.)
+    select(Immi,UI,benchmark) %>%
+    model.matrix(Immi~benchmark+UI-1,data=.)
   XL_im[,2]=XL_im[,2]-XL_im[,1]
   XL_im=XL_im[,2:4]
 

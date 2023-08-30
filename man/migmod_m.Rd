@@ -9,6 +9,7 @@ migmod_m(
   sending = c("SE", "FI", "IT", "PL"),
   receiving = c("SE", "FI", "IT", "PL"),
   years = 2010:2019,
+  ref.country = "SE",
   ...
 )
 }
@@ -21,11 +22,14 @@ migmod_m(
 
 \item{years}{A vector of years to be used in the model (2010 to 2019)}
 
-\item{...}{Arguments passed to \code{rstan::sampling} (e.g. iter, chains).}
+\item{...}{Arguments passed to function \code{\link[rstan:stanmodel-method-sampling]{rstan::sampling()}} from package \pkg{\link{rstan}} (e.g. iter, chains).}
 }
 \value{
 An object of class \code{stanfit} returned by \code{rstan::sampling}
 }
 \description{
 Function to estimate migration model
+}
+\seealso{
+\code{\link[rstan]{stan}}
 }

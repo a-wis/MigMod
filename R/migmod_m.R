@@ -5,13 +5,16 @@
 #' @param sending A vector of ISO2 codes with sending countries to be used in the model (recommended to keep SE and FI)
 #' @param receiving A vector of ISO2 codes with receiving countries to be used in the model (recommended to keep SE and FI)
 #' @param years A vector of years to be used in the model (2010 to 2019)
-#' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
+#' @param ... Arguments passed to function [rstan::sampling()] from package \pkg{\link{rstan}} (e.g. iter, chains).
 #' @return An object of class `stanfit` returned by `rstan::sampling`
 #'
+#' @seealso \code{\link[rstan]{stan}}
 migmod_m <- function(df,
-                              sending = c("SE","FI","IT","PL"),
-                              receiving = c("SE","FI","IT","PL"),
-                              years = 2010:2019, ...){
+                     sending = c("SE","FI","IT","PL"),
+                     receiving = c("SE","FI","IT","PL"),
+                     years = 2010:2019,
+                     ref.country="SE",
+                     ...){
 
 standata <- data_2_standata(df=df,
                             sending=sending,
