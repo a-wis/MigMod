@@ -4,7 +4,8 @@
 #' @param df A data frame with migration data for sending countries, receiving countries, data quality measures and covariates
 #' @param sending A vector of ISO2 codes with sending countries to be used in the model (recommended to keep SE and FI)
 #' @param receiving A vector of ISO2 codes with receiving countries to be used in the model (recommended to keep SE and FI)
-#' @param years A vector of years to be used in the model (2010 to 2019)
+#' @param years A vector of years to be used in the model (2010 to 2019).
+#' @param ref.country A character with an ISO2 code receiving country which immigration data are is used as a reference. This assumes that the data reported by this country are not biased. This assumption ensures identification of model parameters. It is strongly recommended to use Sweden ("SE") as a reference.
 #' @param ... Arguments passed to function [rstan::sampling()] from package \pkg{\link{rstan}} (e.g. iter, chains).
 #' @return An object of class `stanfit` returned by `rstan::sampling`
 #'

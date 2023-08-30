@@ -20,7 +20,9 @@ migmod_m(
 
 \item{receiving}{A vector of ISO2 codes with receiving countries to be used in the model (recommended to keep SE and FI)}
 
-\item{years}{A vector of years to be used in the model (2010 to 2019)}
+\item{years}{A vector of years to be used in the model (2010 to 2019).}
+
+\item{ref.country}{A character with an ISO2 code receiving country which immigration data are is used as a reference. This assumes that the data reported by this country are not biased. This assumption ensures identification of model parameters. It is strongly recommended to use Sweden ("SE") as a reference.}
 
 \item{...}{Arguments passed to function \code{\link[rstan:stanmodel-method-sampling]{rstan::sampling()}} from package \pkg{\link{rstan}} (e.g. iter, chains).}
 }
