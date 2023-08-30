@@ -20,7 +20,9 @@ The package contains one key function `migmod_m` that takes as arguments a data 
 modfit <- migmod_m(df = mig_data, 
                   sending = c("SE", "FI", "IT", "PL"),
                   receiving = c("SE", "FI", "IT", "PL"),
-                  years = 2010:2019,...)
+                  years = 2010:2019,
+                  ref.country = "SE",
+                  ...)
 ```
 
 The results can be plotted by using a `plot_migmod` function that converts the `stanfit` into posterior summaries, binds with data and then plots by using `ggplot` functions.
