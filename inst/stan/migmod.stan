@@ -17,8 +17,8 @@ data {
   int<lower=0> N_mis2;
   int<lower=0> N_preds;
   int<lower=0> N_corr;
-  int z1[N_obs1];
-  int z2[N_obs2];
+  int z1[N_obs1]; //immi
+  int z2[N_obs2]; //emig
   int z_ind1[N_obs1];
   int z_ind2[N_obs2];
   matrix[N_obs+N_mis,N_preds] X_all;
@@ -91,8 +91,6 @@ model {
   sigma ~ student_t(2.5,0,25);
   sigma_psi_0 ~ normal(0,3.0);
   sigma_psi_1 ~ normal(0,1.0);
-  // alpha ~ normal(0.0,5.0);
-  // alpha ~ normal(psi_o,5.0);
   beta ~ normal(0.0,5.0);
   lambda1[1] ~ beta(IL[2],IL[1]); //immigration
   lambda1[2] ~ beta(IL[2],IL[1]); //immigration

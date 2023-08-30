@@ -32,7 +32,7 @@ out <- rstan::sampling(stanmodels$migmod,
                        init = list(inits,inits),
                        iter = 1000, warmup = 500,
                        control = list(adapt_delta=0.95,
-                                      max_treedepth=16),
+                                      max_treedepth=15),
                        ...)
 return(out)
 }
