@@ -33,5 +33,5 @@ plot_migmod(df = mig_data,
             log.m = FALSE,
             sending = c("SE", "FI", "IT", "PL"),
             receiving = c("SE", "FI", "IT", "PL"),
-            years = 2010:2019,...)
+            years = 2010:2019)
 ```
