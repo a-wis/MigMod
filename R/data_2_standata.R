@@ -6,6 +6,7 @@
 #' @param sending A vector of ISO2 codes with sending countries to be used in the model (recommended to keep SE and FI)
 #' @param receiving A vector of ISO2 codes with receiving countries to be used in the model (recommended to keep SE and FI)
 #' @param years A vector of years to be used in the model (2010 to 2019)
+#' @param ref.country A character with an ISO2 code receiving country which immigration data are is used as a reference. This assumes that the data reported by this country are not biased. This assumption ensures identification of model parameters. It is strongly recommended to use Sweden ("SE") as a reference.
 #' @return A list to be passed on to the stan model that contains all required inputs
 #'
 data_2_standata = function(df, sending = c("SE","FI","IT","PL"),
