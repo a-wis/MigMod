@@ -21,7 +21,7 @@ dat1 = df %>%
          Receiving_iso2 %in% receiving,
          Year %in% years)
 
-sumy1=summary(fit1,pars=ifelse(log.m==FALSE,"yl","y"))$summary %>%
+sumy1=summary(mmfit,pars=ifelse(log.m==FALSE,"yl","y"))$summary %>%
   as.data.frame() %>%
   bind_cols(dat1) %>%
   mutate(UI=fct_relevel(UI,"high","medium","low"),
@@ -32,8 +32,10 @@ sumy1=summary(fit1,pars=ifelse(log.m==FALSE,"yl","y"))$summary %>%
 sumy1 %>%
   ggplot() +
   geom_ribbon(aes(x=Year, ymin=(`2.5%`),ymax=(`97.5%`),fill="95% CI"),alpha=0.4) +
-  geom_point(aes(x=Year,y=Immi,colour="Immi",shape=AI, size=UI),alpha=0.5) +
-  geom_point(aes(x=Year,y=Emig,colour="Emig",shape=AE, size=UE),alpha=0.5) +
+  geom_point(aes(x=Year,y=Immi,colour="Immi",shape=AI, size=UI),
+             alpha=0.5) +
+  geom_point(aes(x=Year,y=Emig,colour="Emig",shape=AE, size=UE),
+             alpha=0.5) +
   scale_shape_discrete(na.translate = F) +
   scale_size_discrete(range=c(1,3)) +
   scale_x_continuous(breaks=seq(2010,2019,3)) +
