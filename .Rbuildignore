@@ -7,3 +7,4 @@ Read-and-delete-me
 ^docs$
 ^pkgdown$
 ^\.github$
+^LICENSE\.md$
