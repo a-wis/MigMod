@@ -116,4 +116,7 @@ model {
 
 }
 generated quantities {
+  vector[N_all] yl;
+
+  yl = exp(y);
 }

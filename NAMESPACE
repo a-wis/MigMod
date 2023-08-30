@@ -2,6 +2,7 @@
 
 export(data_2_standata)
 export(migmod_m)
+export(plot_migmod)
 import(Rcpp)
 import(methods)
 import(tidyverse)

@@ -27,9 +27,10 @@ data_2_standata = function(df, sending = c("SE","FI","IT","PL"),
 
   XL_im=df %>%
     filter(!is.na(Immi)) %>%
-    select(Immi,UI) %>%
+    select(Immi,UI,SE_benchmark) %>%
     model.matrix(Immi~UI-1,data=.)
-  XL_im[,1]=0
+  XL_im[,2]=XL_im[,2]-XL_im[,1]
+  XL_im=XL_im[,2:4]
 
   out=list(N_mis=df %>%
              filter(is.na(Immi)& is.na(Emig)) %>%
