@@ -1,6 +1,7 @@
 #' Function transforming data frame with data to standata (a list)
 #'
-#' @import tidyverse
+#' @import dplyr
+#' @import tidyr
 #' @export
 #' @param df A data frame with migration data for sending countries, receiving countries, data quality measures and covariates
 #' @param sending A vector of ISO2 codes with sending countries to be used in the model (recommended to keep SE and FI)
