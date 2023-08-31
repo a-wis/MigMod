@@ -1,4 +1,4 @@
-#' Function transforming data frame with data to standata (a list)
+#' Function transforming data frame to a list - input to Stan
 #'
 #' @import dplyr
 #' @import tidyr

@@ -13,21 +13,21 @@ mig_data
 \description{
 These data sets have been downloaded from:
 the publicly available Eurostat data base on population:
-https://ec.europa.eu/eurostat/web/main/data/database,
+\link{https://ec.europa.eu/eurostat/web/main/data/database},
 data bases 'migr' and 'demo'.
-These are migration statistics for selected EU countries,
+\itemize{
+\item These are migration statistics for selected EU countries,
 and population sizes. The data relate to 2010-2019 period.
-}
-\details{
-Shiny app made by Maciej Jan Dańko:
-https://maciej-jan-danko.shinyapps.io/HMigD_Shiny_App_I/,
+\item Shiny app made by Maciej Jan Dańko:
+\link{https://maciej-jan-danko.shinyapps.io/HMigD_Shiny_App_I/},
 These data contain the assumed accuracy of the data sources.
-
-Shiny app made by Maciej Jan Dańko:
-https://maciej-jan-danko.shinyapps.io/undercountmigscores/
+\item Shiny app made by Maciej Jan Dańko:
+\link{https://maciej-jan-danko.shinyapps.io/undercountmigscores/}
 These data contain undercounting scores for emigration
 and immigration based on 30\% metadata and 70\% model scores.
-
+}
+}
+\details{
 \code{mig_data} are a data frame/tibble.
 }
 \examples{

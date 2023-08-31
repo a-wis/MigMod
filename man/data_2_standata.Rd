@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_2_standata.R
 \name{data_2_standata}
 \alias{data_2_standata}
-\title{Function transforming data frame with data to standata (a list)}
+\title{Function transforming data frame to a list - input to Stan}
 \usage{
 data_2_standata(
   df,
@@ -27,5 +27,5 @@ data_2_standata(
 A list to be passed on to the stan model that contains all required inputs
 }
 \description{
-Function transforming data frame with data to standata (a list)
+Function transforming data frame to a list - input to Stan
 }
