@@ -47,7 +47,9 @@
 <span>  sending <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"SE"</span>, <span class="st">"FI"</span>, <span class="st">"IT"</span>, <span class="st">"PL"</span><span class="op">)</span>,</span>
 <span>  receiving <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"SE"</span>, <span class="st">"FI"</span>, <span class="st">"IT"</span>, <span class="st">"PL"</span><span class="op">)</span>,</span>
 <span>  years <span class="op">=</span> <span class="fl">2010</span><span class="op">:</span><span class="fl">2019</span>,</span>
-<span>  ref.country <span class="op">=</span> <span class="st">"SE"</span></span>
+<span>  ref.country <span class="op">=</span> <span class="st">"SE"</span>,</span>
+<span>  priors <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>EL <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">16.9579</span>, <span class="fl">44.94987</span><span class="op">)</span>, EH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">38.52081</span>, <span class="fl">32.1352</span><span class="op">)</span>, IL <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">8.066021</span>,</span>
+<span>    <span class="fl">57.490667</span><span class="op">)</span>, IH <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">20.89134</span>, <span class="fl">44.56385</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -72,12 +74,20 @@
 <dt>ref.country</dt>
 <dd><p>A character with an ISO2 code receiving country which immigration data are is used as a reference. This assumes that the data reported by this country are not biased. This assumption ensures identification of model parameters. It is strongly recommended to use Sweden ("SE") as a reference.</p></dd>
 
+
+<dt>priors</dt>
+<dd><p>A list containing hyperparameters for the beta distributions representing high and low undercounting (i.e. bias) of emigration and immigration (EL, EH, IL, IH). Default values are based on experts' assessment in Wiśniowski <em>et al</em>. (2013).</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
 <p>A list to be passed on to the stan model that contains all required inputs</p>
+    </div>
+    <div class="section level2">
+    <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
+    <p>Wiśniowski A., Bijak J., Christiansen S., Forster J. J., Keilman N., Raymer J., &amp; Smith P. W. (2013). Utilising expert opinion to improve the measurement of international migration in Europe. <em>Journal of Official Statistics</em>, 29(4), 583-607. <a href="https://doi.org/10.2478/jos-2013-0041" class="external-link">https://doi.org/10.2478/jos-2013-0041</a></p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

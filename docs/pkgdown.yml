@@ -1,8 +1,8 @@
-pandoc: 2.19.2
+pandoc: 3.1.1
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-08-31T21:56Z
+last_built: 2023-09-06T23:42Z
 urls:
   reference: https://a-wis.github.io/MigMod/reference
   article: https://a-wis.github.io/MigMod/articles

@@ -24,7 +24,7 @@ migmod_m(
 
 \item{ref.country}{A character with an ISO2 code receiving country which immigration data are is used as a reference. This assumes that the data reported by this country are not biased. This assumption ensures identification of model parameters. It is strongly recommended to use Sweden ("SE") as a reference.}
 
-\item{...}{Arguments passed to function \code{\link[rstan]{sampling}} from package \pkg{\link{rstan}} (e.g. iter, chains).}
+\item{...}{Arguments passed to function \code{\link[rstan]{sampling}} from package \pkg{\link{rstan}} (e.g. iter, chains) or \code{\link[MigMod]{data_2_standata}}.}
 }
 \value{
 An object of class \code{stanfit} returned by \code{rstan::sampling}
@@ -40,7 +40,7 @@ The true migration flows then result from correcting the expected values of the 
 
 The true flows are then modelled by using a mixed effects model that contains an autoregressive part with parameter \eqn{\phi} and a gravity-type model with populations of sending (\eqn{X_{it}}) and receiving (\eqn{X_{jt}}) countries as well as distance \eqn{D_{ij}} between them:
 
-\eqn{\log y_{ijt}^k  \sim \mathrm{normal}\left(\phi_{ij}\log y_{ijt-1} + \beta_1 X_{it} + \beta_2 X_{jt} + \beta_3 D_{ij}, \sigma_y\right)}
+\eqn{\log y_{ijt}^k  \sim \mathrm{normal}\left(\phi_{ij}\log y_{ijt-1} + \beta_1 \log X_{it} + \beta_2 \log X_{jt} + \beta_3 D_{ij}, \sigma_y\right)}
 
 Note, that this specification requires that there are no fully unobserved flows in the model.
 }

@@ -9,7 +9,9 @@ data_2_standata(
   sending = c("SE", "FI", "IT", "PL"),
   receiving = c("SE", "FI", "IT", "PL"),
   years = 2010:2019,
-  ref.country = "SE"
+  ref.country = "SE",
+  priors = list(EL = c(16.9579, 44.94987), EH = c(38.52081, 32.1352), IL = c(8.066021,
+    57.490667), IH = c(20.89134, 44.56385))
 )
 }
 \arguments{
@@ -22,10 +24,15 @@ data_2_standata(
 \item{years}{A vector of years to be used in the model (2010 to 2019)}
 
 \item{ref.country}{A character with an ISO2 code receiving country which immigration data are is used as a reference. This assumes that the data reported by this country are not biased. This assumption ensures identification of model parameters. It is strongly recommended to use Sweden ("SE") as a reference.}
+
+\item{priors}{A list containing hyperparameters for the beta distributions representing high and low undercounting (i.e. bias) of emigration and immigration (EL, EH, IL, IH). Default values are based on experts' assessment in Wiśniowski \emph{et al}. (2013).}
 }
 \value{
 A list to be passed on to the stan model that contains all required inputs
 }
 \description{
 Function transforming data frame to a list - input to Stan
+}
+\references{
+Wiśniowski A., Bijak J., Christiansen S., Forster J. J., Keilman N., Raymer J., & Smith P. W. (2013). Utilising expert opinion to improve the measurement of international migration in Europe. \emph{Journal of Official Statistics}, 29(4), 583-607. \href{https://doi.org/10.2478/jos-2013-0041}{https://doi.org/10.2478/jos-2013-0041}
 }
