@@ -45,7 +45,6 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_migmod</span><span class="op">(</span></span>
 <span>  <span class="va">df</span>,</span>
 <span>  <span class="va">mmfit</span>,</span>
-<span>  log.m <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  sending <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"SE"</span>, <span class="st">"FI"</span>, <span class="st">"IT"</span>, <span class="st">"PL"</span><span class="op">)</span>,</span>
 <span>  receiving <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"SE"</span>, <span class="st">"FI"</span>, <span class="st">"IT"</span>, <span class="st">"PL"</span><span class="op">)</span>,</span>
 <span>  years <span class="op">=</span> <span class="fl">2010</span><span class="op">:</span><span class="fl">2019</span></span>
@@ -60,10 +59,6 @@
 
 <dt>mmfit</dt>
 <dd><p>A <code>stanfit</code> object produced by the function <code>migmod_m</code> that contains estimates of the model parameters and synthetic estimates of the "true" migration.</p></dd>
-
-
-<dt>log.m</dt>
-<dd><p>Logical (<code>FALSE</code> by default). The function produces a plot with estimates on a level-scale. Setting this option to <code>TRUE</code> will produce results on a log scale.</p></dd>
 
 
 <dt>sending</dt>

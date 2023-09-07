@@ -3,7 +3,6 @@
 #' @export
 #' @param df A data frame with migration data for sending countries, receiving countries, data quality measures and covariates
 #' @param mmfit A `stanfit` object produced by the function `migmod_m` that contains estimates of the model parameters and synthetic estimates of the "true" migration.
-#' @param log.m Logical (`FALSE` by default). The function produces a plot with estimates on a level-scale. Setting this option to `TRUE` will produce results on a log scale.
 #' @param sending A vector of ISO2 codes with sending countries to be used in the model (recommended to keep SE and FI)
 #' @param receiving A vector of ISO2 codes with receiving countries to be used in the model (recommended to keep SE and FI)
 #' @param years A vector of years to be used in the model (2010 to 2019)
@@ -11,7 +10,6 @@
 #'
 plot_migmod <- function(df,
                         mmfit,
-                        log.m = FALSE,
                         sending = c("SE","FI","IT","PL"),
                         receiving = c("SE","FI","IT","PL"),
                         years = 2010:2019){
@@ -21,13 +19,11 @@ dat1 = df %>%
          Receiving_iso2 %in% receiving,
          Year %in% years)
 
-sumy1=rstan::summary(mmfit,pars=ifelse(log.m==FALSE,"yl","y"))$summary %>%
+sumy1=summary(mmfit,pars="yl")$summary %>%
   as.data.frame() %>%
   bind_cols(dat1) %>%
   mutate(UI=fct_relevel(UI,"high","medium","low"),
-         UE=fct_relevel(UE,"high","medium","low"),
-         Immi=ifelse(log.m==FALSE,Immi,log(Immi)),
-         Emig=ifelse(log.m==FALSE,Emig,log(Emig)))
+         UE=fct_relevel(UE,"high","medium","low"))
 
 sumy1 %>%
   ggplot() +

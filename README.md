@@ -30,7 +30,6 @@ The results can be plotted by using a `plot_migmod` function that converts the `
 ```r
 plot_migmod(df = mig_data, 
             mmfit = modfit,
-            log.m = FALSE,
             sending = c("SE", "FI", "IT", "PL"),
             receiving = c("SE", "FI", "IT", "PL"),
             years = 2010:2019)

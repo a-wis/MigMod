@@ -7,7 +7,6 @@
 plot_migmod(
   df,
   mmfit,
-  log.m = FALSE,
   sending = c("SE", "FI", "IT", "PL"),
   receiving = c("SE", "FI", "IT", "PL"),
   years = 2010:2019
@@ -17,8 +16,6 @@ plot_migmod(
 \item{df}{A data frame with migration data for sending countries, receiving countries, data quality measures and covariates}
 
 \item{mmfit}{A \code{stanfit} object produced by the function \code{migmod_m} that contains estimates of the model parameters and synthetic estimates of the "true" migration.}
-
-\item{log.m}{Logical (\code{FALSE} by default). The function produces a plot with estimates on a level-scale. Setting this option to \code{TRUE} will produce results on a log scale.}
 
 \item{sending}{A vector of ISO2 codes with sending countries to be used in the model (recommended to keep SE and FI)}
 
