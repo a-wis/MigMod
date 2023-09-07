@@ -21,7 +21,7 @@ dat1 = df %>%
          Receiving_iso2 %in% receiving,
          Year %in% years)
 
-sumy1=summary(mmfit,pars=ifelse(log.m==FALSE,"yl","y"))$summary %>%
+sumy1=rstan::summary(mmfit,pars=ifelse(log.m==FALSE,"yl","y"))$summary %>%
   as.data.frame() %>%
   bind_cols(dat1) %>%
   mutate(UI=fct_relevel(UI,"high","medium","low"),
