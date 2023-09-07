@@ -40,7 +40,7 @@ The true migration flows then result from correcting the expected values of the 
 
 The true flows are then modelled by using a mixed effects model that contains an autoregressive part with parameter \eqn{\phi} and a gravity-type model with populations of sending (\eqn{X_{it}}) and receiving (\eqn{X_{jt}}) countries as well as distance \eqn{D_{ij}} between them:
 
-\eqn{\log y_{ijt}^k  \sim \mathrm{normal}\left(\psi_0 + \psi_{1,ij}\log y_{ijt-1} + \beta_1 \log X_{it} + \beta_2 \log X_{jt} + \beta_3 D_{ij}, \sigma_y\right)}
+\eqn{\log y_{ijt}  \sim \mathrm{normal}\left(\psi_0 + \psi_{1,ij}\log y_{ijt-1} + \beta_1 \log X_{it} + \beta_2 \log X_{jt} + \beta_3 D_{ij}, \sigma_y\right)}
 
 Note, that this specification requires that there are no fully unobserved flows in the model.
 }
