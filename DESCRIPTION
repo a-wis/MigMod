@@ -12,7 +12,8 @@ RoxygenNote: 7.2.1
 Biarch: true
 Depends: 
     R (>= 3.4.0),
-    tidyverse
+    dplyr,
+    tidyr
 Imports: 
     methods,
     Rcpp (>= 0.12.0),
