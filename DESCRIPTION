@@ -1,6 +1,6 @@
 Package: MigMod
 Title: Integrated Modelling of Human Migration
-Version: 0.0.0.9000
+Version: 0.0.1.0000
 Authors@R: 
     person("Arkadiusz", "Wiśniowski", , "a.wisniowski@manchester.ac.uk", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0002-7567-3600"))
@@ -8,7 +8,7 @@ Description: The package estimates bilateral migration flows amongst a group of 
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Biarch: true
 Depends: 
     R (>= 3.4.0),
